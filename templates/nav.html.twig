@@ -1,0 +1,32 @@
+{% set menu = app.session.get('menu')%}
+<nav id="sidebar" class="sidebar js-sidebar">
+	<div class="sidebar-content js-simplebar">
+		<a class="sidebar-brand" href="/admin">
+			<span class="align-middle">AdminKit</span>
+		</a>
+        <ul class="sidebar-nav">
+
+            {% for index in menu %}
+				<li class="sidebar-item active">
+					<a data-bs-target="#Menu{{index['id']}}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true" aria-controls="#Menu{{index['id']}}">
+						<i class="fas fa-sliders-h"></i>
+						<span class="align-middle">{{index['name'].name}}</span>
+					</a>
+					<ul id="Menu{{index['id']}}" class="sidebar-dropdown list-unstyled collapse show" style="">
+						{% for i in index['sub_menu'] %}
+							<li class="sidebar-item">
+								<a class="sidebar-link" href="/{{index['name'].name}}/{{i['link_name']}}">
+									<i class="align-middle" data-feather="cards"></i>
+									<span class="align-middle">{{i['name']}}</span>
+								</a>
+
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+
+        </ul>
+
+    </div>
+</nav>
