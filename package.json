@@ -14,5 +14,10 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@burhanahmeed/vue-modal-2": "^1.1.11",
+        "vue-sweetalert2": "^5.0.2",
+        "vue2-transitions": "^0.3.0"
     }
 }

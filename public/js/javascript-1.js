@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+    var ctx = document.getElementById("chartjs-dashboard-line");
+    if (ctx == null) {
+        return;
+    }
     var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
     var gradient = ctx.createLinearGradient(0, 0, 0, 225);
     gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
     gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+
     // Line chart
     new Chart(document.getElementById("chartjs-dashboard-line"), {
         type: "line",

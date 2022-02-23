@@ -13,6 +13,21 @@ use Doctrine\ORM\Mapping as ORM;
 class SousMenus
 {
     /**
+    * @ORM\ManyToOne(targetEntity="Menu")
+    * @ORM\JoinColumn(name="id_menu", referencedColumnName="id")
+    */
+    private $menu;
+    public function getMenu(): ?Menu
+    {
+    return $this->menu;
+    }
+    public function setMenu(?Menu $menu): self
+    {
+    $this->menu = $menu;
+
+    return $this;
+    }
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
@@ -22,16 +37,16 @@ class SousMenus
     private $id;
 
     /**
-     * @var int|null
+     * @var int
      *
-     * @ORM\Column(name="id_menu", type="integer", nullable=true)
+     * @ORM\Column(name="id_menu", type="integer", nullable=false)
      */
     private $idMenu;
 
     /**
-     * @var string|null
+     * @var string
      *
-     * @ORM\Column(name="name", type="string", length=50, nullable=true)
+     * @ORM\Column(name="name", type="string", length=20, nullable=false)
      */
     private $name;
 
@@ -52,7 +67,7 @@ class SousMenus
         return $this->idMenu;
     }
 
-    public function setIdMenu(?int $idMenu): self
+    public function setIdMenu(int $idMenu): self
     {
         $this->idMenu = $idMenu;
 
@@ -64,7 +79,7 @@ class SousMenus
         return $this->name;
     }
 
-    public function setName(?string $name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 

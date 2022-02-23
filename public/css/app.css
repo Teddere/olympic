@@ -2360,7 +2360,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input[type=radio] {
-    border-radius: 50%
+    /* border-radius: 50% */
+    border-radius: .25em
 }
 
 .form-check-input:active {
@@ -21936,18 +21937,20 @@ body[data-layout=boxed] .wrapper {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
-@font-face {
+
+/* @font-face {
     font-display: block;
     font-family: Font Awesome\ 5 Free;
     font-style: normal;
     font-weight: 400;
     src: url(../fonts/fa-regular-400.eot);
     src: url(../fonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(../fonts/fa-regular-400.woff2) format("woff2"), url(../fonts/fa-regular-400.woff) format("woff"), url(../fonts/fa-regular-400.ttf) format("truetype"), url(../fonts/fa-regular-400.svg#fontawesome) format("svg")
-}
+} */
 
-.far {
+
+/* .far {
     font-weight: 400
-}
+} */
 
 
 /*!
@@ -21955,20 +21958,22 @@ body[data-layout=boxed] .wrapper {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
-@font-face {
+
+/* @font-face {
     font-display: block;
     font-family: Font Awesome\ 5 Free;
     font-style: normal;
     font-weight: 900;
     src: url(../fonts/fa-solid-900.eot);
     src: url(../fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(../fonts/fa-solid-900.woff2) format("woff2"), url(../fonts/fa-solid-900.woff) format("woff"), url(../fonts/fa-solid-900.ttf) format("truetype"), url(../fonts/fa-solid-900.svg#fontawesome) format("svg")
-}
+} */
 
-.fa,
+
+/* .fa,
 .far,
 .fas {
     font-family: Font Awesome\ 5 Free
-}
+} */
 
 .fa,
 .fas {

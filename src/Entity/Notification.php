@@ -40,7 +40,7 @@ class Notification
      *
      * @ORM\Column(name="status", type="boolean", nullable=true)
      */
-    private $status = '0';
+    private $status;
 
     public function getId(): ?int
     {

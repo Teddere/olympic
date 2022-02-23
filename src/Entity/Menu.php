@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * Menu
@@ -12,6 +14,21 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Menu
 {
+    /**
+    * @ORM\OneToMany(targetEntity="SousMenus", mappedBy="menu")
+    */
+    private $SousMenus;
+    public function __construct()
+    {
+    $this->SousMenus = new ArrayCollection();
+    }
+    /**
+    * @return Collection|SousMenus[]
+    */
+    public function getMySousMenus(): Collection
+    {
+    return $this->SousMenus;
+    }
     /**
      * @var int
      *

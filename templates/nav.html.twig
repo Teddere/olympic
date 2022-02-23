@@ -9,10 +9,10 @@
             {% for index in menu %}
 				<li class="sidebar-item active">
 					<a data-bs-target="#Menu{{index['id']}}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true" aria-controls="#Menu{{index['id']}}">
-						<i class="fas fa-sliders-h"></i>
+						<i class="fas {{index['name'].icone}}"></i>
 						<span class="align-middle">{{index['name'].name}}</span>
 					</a>
-					<ul id="Menu{{index['id']}}" class="sidebar-dropdown list-unstyled collapse show" style="">
+					<ul id="Menu{{index['id']}}" class="sidebar-dropdown list-unstyled collapse show">
 						{% for i in index['sub_menu'] %}
 							<li class="sidebar-item">
 								<a class="sidebar-link" href="/{{index['name'].name}}/{{i['link_name']}}">
@@ -25,8 +25,21 @@
 					</ul>
 				</li>
 			{% endfor %}
-
-        </ul>
+			<li class="sidebar-item active">
+				<a data-bs-target="#settings" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true" aria-controls="#settings">
+					<i class="fas fa-user"></i>
+					<span>Paramètre</span>
+				</a>
+					<ul id="settings" class="sidebar-dropdown list-unstyled collapse show">
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{{path('profile')}}">
+								<i class="align-middle" data-feather="cards"></i>
+								<span>Profil</span>
+							</a>
+						</li>
+					</ul>
+			</li>
+		</ul>
 
     </div>
 </nav>

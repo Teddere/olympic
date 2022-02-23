@@ -70,6 +70,13 @@ class Users
      */
     private $job;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="validation", type="string", length=200, nullable=true)
+     */
+    private $validation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -155,6 +162,18 @@ class Users
     public function setJob(string $job): self
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    public function getValidation(): ?string
+    {
+        return $this->validation;
+    }
+
+    public function setValidation(?string $validation): self
+    {
+        $this->validation = $validation;
 
         return $this;
     }
